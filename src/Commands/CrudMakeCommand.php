@@ -11,7 +11,7 @@ class CrudMakeCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:crud';
+    protected $signature = 'make:crud {name}';
 
     /**
      * The console command description.
@@ -19,6 +19,8 @@ class CrudMakeCommand extends Command
      * @var string
      */
     protected $description = 'Generate CRUD resources';
+
+    protected $name;
 
     /**
      * Create a new command instance.
@@ -37,6 +39,17 @@ class CrudMakeCommand extends Command
      */
     public function handle()
     {
-        //
+        $this->name = $this->argument('name');
+
+        $this->makeModule();
+    }
+
+    private function makeModule()
+    {
+        $this->call('make:model',[
+            'name' => $this->name,
+            '--migration' => 1,
+            '--resource' => 1,
+        ]);
     }
 }
