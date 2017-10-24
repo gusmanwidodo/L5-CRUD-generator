@@ -50,7 +50,7 @@ class ControllerGenerator
 
         $template = str_replace('{{model}}', ucwords(camel_case($this->name)), $template);
 
-        $template = str_replace('{{view}}', str_slug($this->name), $template);
+        $template = str_replace('{{view}}', snake_case($this->name, '-'), $template);
 
         return $template;
     }
