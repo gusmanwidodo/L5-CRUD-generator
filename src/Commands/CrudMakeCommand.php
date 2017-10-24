@@ -2,6 +2,7 @@
 
 namespace Gusman\L5Generator\Commands;
 
+use Gusman\L5Generator\Generators\ControllerGenerator;
 use Illuminate\Console\Command;
 
 class CrudMakeCommand extends Command
@@ -46,10 +47,14 @@ class CrudMakeCommand extends Command
 
     private function makeModule()
     {
-        $this->call('make:model',[
-            'name' => $this->name,
-            '--migration' => 1,
-            '--resource' => 1,
-        ]);
+        (new ControllerGenerator($this->name))->make();
+
+        $this->info('Controller created successfully.');
+
+//        $this->call('make:model',[
+//            'name' => $this->name,
+//            '--migration' => 1,
+//            '--resource' => 1,
+//        ]);
     }
 }
