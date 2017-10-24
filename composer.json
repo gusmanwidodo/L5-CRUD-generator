@@ -1,0 +1,11 @@
+{
+    "name": "gusman/l5-crud-generator",
+    "description": "Laravel 5's generators with TDD included.",
+    "authors": [
+        {
+            "name": "Gusman Widodo",
+            "email": "gusmanwidodo@gmail.com"
+        }
+    ],
+    "require": {}
+}
