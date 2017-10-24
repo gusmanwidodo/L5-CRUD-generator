@@ -51,10 +51,9 @@ class CrudMakeCommand extends Command
 
         $this->info('Controller created successfully.');
 
-//        $this->call('make:model',[
-//            'name' => $this->name,
-//            '--migration' => 1,
-//            '--resource' => 1,
-//        ]);
+        $this->call('make:model',[
+            'name' => $this->name,
+            '--migration' => 1,
+        ]);
     }
 }
