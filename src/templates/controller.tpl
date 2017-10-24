@@ -16,7 +16,7 @@ class {{class}} extends Controller
     {
         ${{list}} = {{model}}::all();
 
-        return $this->view('{{view}}.index', compact('{{list}}'));
+        return view('{{view}}.index', compact('{{list}}'));
     }
 
     /**
@@ -26,7 +26,7 @@ class {{class}} extends Controller
      */
     public function create()
     {
-        return $this->view('{{view}}.create');
+        return view('{{view}}.create');
     }
 
     /**
@@ -52,7 +52,7 @@ class {{class}} extends Controller
     {
         ${{single}} = {{model}}::find($id);
 
-        return $this->view('{{view}}.show', compact('{{single}}'));
+        return view('{{view}}.show', compact('{{single}}'));
     }
 
     /**
@@ -65,7 +65,7 @@ class {{class}} extends Controller
     {
         ${{single}} = {{model}}::find($id);
 
-        return $this->view('{{view}}.edit', compact('{{single}}'));
+        return view('{{view}}.edit', compact('{{single}}'));
     }
 
     /**

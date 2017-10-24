@@ -24,6 +24,8 @@ class ControllerGenerator
         $this->makeDirectory($path);
 
         $this->files->put($path, $this->compileTemplate());
+
+        $this->files->append($this->getRoutePath(), $this->getRouteSyntax());
     }
 
     protected function makeDirectory($path)
@@ -36,6 +38,16 @@ class ControllerGenerator
     protected function getPath()
     {
         return base_path() . '/app/Http/Controllers/' . $this->className . '.php';
+    }
+
+    protected function getRoutePath()
+    {
+        return base_path() . '/routes/web.php';
+    }
+
+    protected function getRouteSyntax()
+    {
+        return PHP_EOL.PHP_EOL . 'Route::resource(\''. snake_case($this->name, '-') .'\', \''. $this->className .'\');';
     }
 
     protected function compileTemplate()
