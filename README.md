@@ -10,7 +10,7 @@ composer require gusman/l5-crud-generator --dev
 public function register()
 {
 	if ($this->app->environment() == 'local') {
-		$this->app->register('Laracasts\Generators\GeneratorsServiceProvider');
+		$this->app->register('Gusman\L5Generator\L5GeneratorServiceProvider');
 	}
 }
 ```
