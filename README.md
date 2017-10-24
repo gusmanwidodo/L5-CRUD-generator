@@ -1,11 +1,11 @@
-#Laravel 5 CRUD Generator
+# Laravel 5 CRUD Generator
 
-##Usage
-###Step 1: Install using composer
+## Usage
+### Step 1: Install using composer
 ```
 composer require gusman/l5-crud-generator --dev
 ```
-###Step 2: Add service provider
+### Step 2: Add service provider
 ```
 public function register()
 {
@@ -14,11 +14,11 @@ public function register()
 	}
 }
 ```
-###Step 3: Run artisan command
+### Step 3: Run artisan command
 ```
 php artisan make:crud {model name}
 ```
-##Example
+## Example
 ```
 php artisan make:crud Sample
 ```
