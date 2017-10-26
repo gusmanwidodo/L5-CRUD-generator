@@ -6,6 +6,7 @@
 composer require gusman/l5-crud-generator --dev
 ```
 ### Step 2: Add service provider
+Open and edit file app/Providers/AppServiceProvider.php
 ```
 public function register()
 {
