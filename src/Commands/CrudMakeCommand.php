@@ -4,6 +4,7 @@ namespace Gusman\L5Generator\Commands;
 
 use Gusman\L5Generator\Generators\ControllerGenerator;
 use Gusman\L5Generator\Generators\ModelGenerator;
+use Gusman\L5Generator\Generators\TestGenerator;
 use Illuminate\Console\Command;
 
 class CrudMakeCommand extends Command
@@ -53,6 +54,9 @@ class CrudMakeCommand extends Command
 
         (new ModelGenerator($this->name))->make();
         $this->info('Model created successfully.');
+
+        (new TestGenerator($this->name))->make();
+        $this->info('Test created successfully.');
 
         $this->call('make:migration',[
             'name' => snake_case('create '. str_plural($this->name) . ' table')
